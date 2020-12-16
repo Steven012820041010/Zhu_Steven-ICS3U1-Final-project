@@ -6,35 +6,48 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  * @author (your name) 
  * @version (a version number or a date)
  */
-public class Bullet extends TankBattle
+public class Bullet extends firstTank
 {
     /**
      * Act - do whatever the Bullet wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
+    
+    private boolean remove;
+    private GreenfootImage image;
+    private int angle;
+    GreenfootSound shootingSound = new GreenfootSound ("GunShotSound.mp3");
+    
+    public Bullet(int angle)
+    {
+        super(angle);
+        this.angle = angle;
+    }
+    
     public void act() 
     {
-        int count = 0;
-        int waitingTime = 0;
-        if (Greenfoot.isKeyDown("x"))
-        {
-            shootBullet(degrees);
-            move(20);
-            count++;
-            
-            
-        }
+        
     }
     public void shootBullet(int angle)
     {
-        
-        Bullet bullet = new Bullet();
-        MyWorld world = (MyWorld) getWorld();
-        world.addObject(bullet,getX()+20,getY());
-        
+        image = new GreenfootImage ("BulletModel.png");
+        setImage(image);
         setRotation(angle);
-        move(20);
-            
-        
+        remove = false;
+   
+ 
     }
+    public void shot(int angle,int x, int y)
+    {
+  
+        image = new GreenfootImage ("BulletModel.png");
+        setImage(image);
+        setRotation(angle);
+        shootingSound.play();
+        //remove = false;
+   
+    }
+    
+    
+        
 }

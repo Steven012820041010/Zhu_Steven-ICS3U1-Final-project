@@ -6,19 +6,36 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  * @author (your name) 
  * @version (a version number or a date)
  */
-public class TankBattle extends Actor
+public class firstTank extends Actor
 {
-    public int degrees = 0;
+    private GreenfootImage image;
+   
+    public int angle;
     /**
      * Act - do whatever the TankBattle wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
+    public firstTank(int direction)
+    {
+        setRotation(direction);
+        image = new GreenfootImage("TankModel.png");
+        setImage(image);
+        this.angle = direction;
+    }
+    
+    
     public void act() 
     {
         // Add your action code here.
-        Bullet bul = new Bullet();
+        Bullet bul = new Bullet(angle);
         movingTank();
-        bul.act();
+        if (Greenfoot.isKeyDown("space"))
+        {
+            move(20);
+            bul.shot(angle,getX(),getY());
+            
+        }
+       
         /*
         
         bul.shootBullet(degrees);
@@ -43,15 +60,19 @@ public class TankBattle extends Actor
         if (Greenfoot.isKeyDown("left"))
         {
             turn(-30);
-            degrees-=30;
+            angle-=30;
         }
         if (Greenfoot.isKeyDown("right"))
         {
             turn(30);
-            degrees+=30;
+            angle+=30;
         }
         
     }
+    
+    
+    
+    
     
     //shoot the bullet until "space" is pressed
     
