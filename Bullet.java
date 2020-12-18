@@ -6,7 +6,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  * @author (your name) 
  * @version (a version number or a date)
  */
-public class Bullet extends firstTank
+public class Bullet extends Actor
 {
     /**
      * Act - do whatever the Bullet wants to do. This method is called whenever
@@ -16,37 +16,42 @@ public class Bullet extends firstTank
     private boolean remove;
     private GreenfootImage image;
     private int angle;
-    GreenfootSound shootingSound = new GreenfootSound ("GunShotSound.mp3");
+    private int cooldown;
     
+    public Bullet ()
+    {
+        
+    }
     public Bullet(int angle)
     {
-        super(angle);
+       
         this.angle = angle;
     }
     
     public void act() 
     {
-        
+        move(20);
+        bouncingOffWall();
+        removeBullet();
     }
-    public void shootBullet(int angle)
+    public void bouncingOffWall()
     {
-        image = new GreenfootImage ("BulletModel.png");
-        setImage(image);
-        setRotation(angle);
-        remove = false;
-   
- 
+        if(isAtEdge())
+        {
+            turn(Greenfoot.getRandomNumber(90));
+        }
     }
-    public void shot(int angle,int x, int y)
+    
+    public void removeBullet()
     {
-  
-        image = new GreenfootImage ("BulletModel.png");
-        setImage(image);
-        setRotation(angle);
-        shootingSound.play();
-        //remove = false;
-   
+        if(Tank.remove)
+        {
+            getWorld().removeObject(this);
+        }
     }
+
+   
+    
     
     
         
