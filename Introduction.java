@@ -13,19 +13,23 @@ public class Introduction extends World
      * Constructor for objects of class Introduction.
      * 
      */
-    private GreenfootImage image;
+    BackArrow arrow;
+    Label back;
     public Introduction()
     {    
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
-        super(600, 400, 1); 
-        setBackground(new GreenfootImage("background.png"));
+        super(1000, 668, 1); 
+        arrow = new BackArrow();
+        arrow.setRotation(180);
+        addObject(arrow,63,40);
+        back = new Label("Back", 35);
+        addObject(back,65,70);
         
-        Label titleTank = new Label ("Tank" , 60);
-        titleTank.setFillColor(greenfoot.Color.GREEN);
-        Label titleBattle = new Label ("Battle" , 60);
-        titleBattle.setFillColor(greenfoot.Color.RED);
-        addObject(titleTank,200,80);
-        addObject(titleBattle,300,150);
+        
+    }
+    
+    public void act()
+    {
         
     }
 }

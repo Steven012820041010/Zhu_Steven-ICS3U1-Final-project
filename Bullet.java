@@ -1,3 +1,4 @@
+
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
@@ -12,46 +13,48 @@ public class Bullet extends Actor
      * Act - do whatever the Bullet wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
+    GreenfootSound shootingSound  = new GreenfootSound("GunShotSound0.mp3");
     
-    private boolean remove;
-    private GreenfootImage image;
-    private int angle;
-    private int cooldown;
+    
+    private int MAX_BOUNCE = 6;
+    private int bounce;
+    private int soundIndex = 0;
     
     public Bullet ()
     {
-        
-    }
-    public Bullet(int angle)
-    {
-       
-        this.angle = angle;
+        shootingSound.setVolume(40);
+        shootingSound.play();
+        bounce = 0;
     }
     
+  
     public void act() 
     {
-        move(20);
-        bouncingOffWall();
+        move(30);
+        bounce();
         removeBullet();
+        
     }
-    public void bouncingOffWall()
+    public void bounce()
     {
-        if(isAtEdge())
+        if(isAtEdge() || isTouching(Wall.class))
         {
-            turn(Greenfoot.getRandomNumber(90));
+            
+            turn(Greenfoot.getRandomNumber(10)+90);
+            
+            bounce++;
         }
+       
+          
     }
     
     public void removeBullet()
     {
-        if(Tank.remove)
+        if (bounce>MAX_BOUNCE)
         {
             getWorld().removeObject(this);
         }
     }
-
-   
-    
     
     
         

@@ -1,0 +1,181 @@
+#
+# A fatal error has been detected by the Java Runtime Environment:
+#
+#  SIGBUS (0xa) at pc=0x00000001391bf830, pid=5636, tid=67587
+#
+# JRE version: OpenJDK Runtime Environment (11.0.2+9) (build 11.0.2+9)
+# Java VM: OpenJDK 64-Bit Server VM (11.0.2+9, mixed mode, tiered, compressed oops, g1 gc, bsd-amd64)
+# Problematic frame:
+# 
+[error occurred during error reporting (printing problematic frame), id 0xa, SIGBUS (0xa) at pc=0x000000011a0b3389]
+
+# No core dump will be written. Core dumps have been disabled. To enable core dumping, try "ulimit -c unlimited" before starting Java again
+#
+# If you would like to submit a bug report, please visit:
+#   http://bugreport.java.com/bugreport/crash.jsp
+# The crash happened outside the Java Virtual Machine in native code.
+# See problematic frame for where to report the bug.
+#
+
+---------------  S U M M A R Y ------------
+
+Command Line: -XX:MaxGCPauseMillis=50 -agentlib:jdwp=transport=dt_socket,address=127.0.0.1:57947 -Dfile.encoding=UTF-8 bluej.runtime.ExecServer UTF-8
+
+Host: MacBookPro16,3 x86_64 1400 MHz, 8 cores, 8G, Darwin 20.2.0
+Time: Thu Dec 24 16:47:58 2020 EST elapsed time: 2121 seconds (0d 0h 35m 21s)
+
+---------------  T H R E A D  ---------------
+
+Current thread (0x00007ff0b4287800):  JavaThread "Thread-4" daemon [_thread_in_native, id=67587, stack(0x0000700007720000,0x00007000077a0000)]
+
+Stack: [0x0000700007720000,0x00007000077a0000],  sp=0x000070000779fd48,  free space=511k
+Native frames: (J=compiled Java code, A=aot compiled Java code, j=interpreted, Vv=VM code, C=native code)
+
+[error occurred during error reporting (printing native stack), id 0xa, SIGBUS (0xa) at pc=0x000000011a0b3389]
+
+
+siginfo: si_signo: 10 (SIGBUS), si_code: 2 (BUS_ADRERR), si_addr: 0x00000001391bf830
+
+Register to memory mapping:
+
+RAX=0x00007ff0b2103a00 points into unknown readable memory: 51 82 39 88 ff ff 1d 01
+RBX=0x00007ff0b2103a20 points into unknown readable memory: b0 c8 eb 88 ff 7f 00 00
+RCX=0x0 is NULL
+RDX=0x000070000779fda8 is pointing into the stack for thread: 0x00007ff0b4287800
+RSP=0x000070000779fd48 is pointing into the stack for thread: 0x00007ff0b4287800
+RBP=0x000070000779fe20 is pointing into the stack for thread: 0x00007ff0b4287800
+RSI=0x000070000779fe98 is pointing into the stack for thread: 0x00007ff0b4287800
+RDI=0x00007ff0b2103a00 points into unknown readable memory: 51 82 39 88 ff ff 1d 01
+R8 =0x000070000779fdf8 is pointing into the stack for thread: 0x00007ff0b4287800
+R9 =0x00007ff0b3399e00 points into unknown readable memory: 99 b5 1d 39 01 80 1d 01
+R10=0x000000000035c7b3 is an unknown value
+R11=0x00007ff0b2103a94 points into unknown readable memory: 01 49 e7 01
+R12=0x00007ff0b2103b18 points into unknown readable memory: 44 4e 4f 43 00 00 00 00
+R13=0x0 is NULL
+R14=0x000070000779fe98 is pointing into the stack for thread: 0x00007ff0b4287800
+R15=
+[error occurred during error reporting (printing register info), id 0xa, SIGBUS (0xa) at pc=0x000000011a0b3389]
+
+Registers:
+RAX=0x00007ff0b2103a00, RBX=0x00007ff0b2103a20, RCX=0x0000000000000000, RDX=0x000070000779fda8
+RSP=0x000070000779fd48, RBP=0x000070000779fe20, RSI=0x000070000779fe98, RDI=0x00007ff0b2103a00
+R8 =0x000070000779fdf8, R9 =0x00007ff0b3399e00, R10=0x000000000035c7b3, R11=0x00007ff0b2103a94
+R12=0x00007ff0b2103b18, R13=0x0000000000000000, R14=0x000070000779fe98, R15=0x00000001391bf830
+RIP=0x00000001391bf830, EFLAGS=0x0000000000010206, ERR=0x0000000000000014
+  TRAPNO=0x000000000000000e
+
+Top of Stack: (sp=0x000070000779fd48)
+0x000070000779fd48:   00007fff2727ec32 000070000779fd90
+0x000070000779fd58:   0f8a6c9000000000 00000dedf3f05840
+0x000070000779fd68:   000033e3b6b2e1a9 3ff0000000000000
+0x000070000779fd78:   0000000000424e60 0000000000000000
+0x000070000779fd88:   0000000000000000 0000000000000000
+0x000070000779fd98:   0000000000000001 0000000000000000
+0x000070000779fda8:   0f8a6c9000000000 00000dedf3f05840
+0x000070000779fdb8:   000035d14a4d8fb2 3ff0199b4fffe88a
+0x000070000779fdc8:   0000000000424e60 0000000000000000
+0x000070000779fdd8:   0000000000000000 0000000000000000
+0x000070000779fde8:   000000000000001b 0000000000000000
+0x000070000779fdf8:   0000000000000000 0000000000000000
+0x000070000779fe08:   00007ff0b2103a20 0000000000000000
+0x000070000779fe18:   00007ff0b2103ad8 000070000779ffb0
+0x000070000779fe28:   00007fff2727e062 0000000000000000
+0x000070000779fe38:   0f8a6c9000000000 00000dedf36bbb80
+0x000070000779fe48:   000035d148cf588c 3ff019bc94fd8061
+0x000070000779fe58:   0000000000000000 0000000000000000
+0x000070000779fe68:   0000000000000000 0000000000000000
+0x000070000779fe78:   0000000000000013 0000000000000000
+0x000070000779fe88:   00007ff0b2103a38 0000000000000000
+0x000070000779fe98:   0f8a6c9000000000 00000dedf36bbb80
+0x000070000779fea8:   000035d148d0c911 3ff019bc94fd8061
+0x000070000779feb8:   0000000000424e60 0000000000000000
+0x000070000779fec8:   0000000000000000 0000000000000000
+0x000070000779fed8:   000000000000001b 0000000000000000
+0x000070000779fee8:   0000000000000000 0000000000000000
+0x000070000779fef8:   000015fb00000064 ffffffff00000001
+0x000070000779ff08:   0000000000000000 000000005fe50445
+0x000070000779ff18:   0000000000003ca4 00000001f7e33000
+0x000070000779ff28:   0000000005b40000 000000007ca03587
+0x000070000779ff38:   00000000120b39ea 0000000072b86eaf 
+
+Instructions: (pc=0x00000001391bf830)
+0x00000001391bf810:   
+[error occurred during error reporting (printing registers, top of stack, instructions near pc), id 0xa, SIGBUS (0xa) at pc=0x00000001145ecb8c]
+
+Stack slot to memory mapping:
+stack at sp + 0 slots: 0x00007fff2727ec32: _ZN13CVDisplayLink9performIOEP11CVTimeStamp+0xe6 in /System/Library/Frameworks/CoreVideo.framework/Versions/A/CoreVideo at 0x00007fff2727c000
+stack at sp + 1 slots: 0x000070000779fd90 is pointing into the stack for thread: 0x00007ff0b4287800
+stack at sp + 2 slots: 0x0f8a6c9000000000 is an unknown value
+stack at sp + 3 slots: 0x00000dedf3f05840 is an unknown value
+stack at sp + 4 slots: 0x000033e3b6b2e1a9 is an unknown value
+stack at sp + 5 slots: 0x3ff0000000000000 is an unknown value
+stack at sp + 6 slots: 0x0000000000424e60 is an unknown value
+stack at sp + 7 slots: 0x0 is NULL
+
+
+---------------  P R O C E S S  ---------------
+
+Threads class SMR info:
+_java_thread_list=0x00007ff0b16169e0, length=24, elements={
+0x00007ff0b500a000, 0x00007ff0b500c800, 0x00007ff0b4075000, 0x00007ff0b2008800,
+0x00007ff0b4078000, 0x00007ff0b380a800, 0x00007ff0b4882800, 0x00007ff0b480b800,
+0x00007ff0b3847000, 0x00007ff0b40b8800, 0x00007ff0b40b9800, 0x00007ff0b20a9000,
+0x00007ff0b2892000, 0x00007ff0b2894000, 0x00007ff0b5085000, 0x00007ff0b281d800,
+0x00007ff0b18a8000, 0x00007ff0b3a13000, 0x00007ff0b224f800, 0x00007ff0b4287800,
+0x00007ff0b4288800, 0x00007ff0b18aa000, 0x00007ff0b428d800, 0x00007ff0b506b000
+}
+
+Java Threads: ( => current thread )
+  0x00007ff0b500a000 JavaThread "Reference Handler" daemon [_thread_blocked, id=18691, stack(0x0000700005637000,0x0000700005737000)]
+  0x00007ff0b500c800 JavaThread "Finalizer" daemon [_thread_blocked, id=18435, stack(0x000070000573a000,0x000070000583a000)]
+  0x00007ff0b4075000 JavaThread "Signal Dispatcher" daemon [_thread_blocked, id=15619, stack(0x0000700005943000,0x0000700005a43000)]
+  0x00007ff0b2008800 JavaThread "C2 CompilerThread0" daemon [_thread_blocked, id=21763, stack(0x0000700005a46000,0x0000700005b46000)]
+  0x00007ff0b4078000 JavaThread "C1 CompilerThread0" daemon [_thread_blocked, id=43011, stack(0x0000700005b49000,0x0000700005c49000)]
+  0x00007ff0b380a800 JavaThread "Sweeper thread" daemon [_thread_blocked, id=42243, stack(0x0000700005c4c000,0x0000700005d4c000)]
+  0x00007ff0b4882800 JavaThread "JDWP Transport Listener: dt_socket" daemon [_thread_blocked, id=22275, stack(0x0000700005d4f000,0x0000700005e4f000)]
+  0x00007ff0b480b800 JavaThread "JDWP Event Helper Thread" daemon [_thread_blocked, id=40963, stack(0x0000700005e52000,0x0000700005f52000)]
+  0x00007ff0b3847000 JavaThread "JDWP Command Reader" daemon [_thread_in_native, id=40707, stack(0x0000700005f55000,0x0000700006055000)]
+  0x00007ff0b40b8800 JavaThread "Service Thread" daemon [_thread_blocked, id=40451, stack(0x0000700006058000,0x0000700006158000)]
+  0x00007ff0b40b9800 JavaThread "Common-Cleaner" daemon [_thread_blocked, id=23811, stack(0x000070000625e000,0x000070000635e000)]
+  0x00007ff0b20a9000 JavaThread "JavaFX Application Thread" daemon [_thread_in_native, id=775, stack(0x00007ffedf91a000,0x00007ffee011a000)]
+  0x00007ff0b2892000 JavaThread "BlueJ worker thread" [_thread_blocked, id=51719, stack(0x00007000066f0000,0x00007000067f0000)]
+  0x00007ff0b2894000 JavaThread "DestroyJavaVM" [_thread_blocked, id=5891, stack(0x0000700004f22000,0x0000700005022000)]
+  0x00007ff0b5085000 JavaThread "main" [_thread_blocked, id=56579, stack(0x000070000700b000,0x000070000710b000)]
+  0x00007ff0b281d800 JavaThread "Java2D Queue Flusher" daemon [_thread_blocked, id=75271, stack(0x00007000067f3000,0x00007000068f3000)]
+  0x00007ff0b18a8000 JavaThread "Java2D Disposer" daemon [_thread_blocked, id=71427, stack(0x000070000710e000,0x000070000720e000)]
+  0x00007ff0b3a13000 JavaThread "QuantumRenderer-0" daemon [_thread_blocked, id=59395, stack(0x000070000751a000,0x000070000761a000)]
+  0x00007ff0b224f800 JavaThread "InvokeLaterDispatcher" daemon [_thread_blocked, id=68867, stack(0x000070000761d000,0x000070000771d000)]
+=>0x00007ff0b4287800 JavaThread "Thread-4" daemon [_thread_in_native, id=67587, stack(0x0000700007720000,0x00007000077a0000)]
+  0x00007ff0b4288800 JavaThread "Thread-5" [_thread_in_native, id=56075, stack(0x0000700006f08000,0x0000700007008000)]
+  0x00007ff0b18aa000 JavaThread "Thread-7" daemon [_thread_blocked, id=66819, stack(0x00007000077a3000,0x00007000078a3000)]
+  0x00007ff0b428d800 JavaThread "SimulationThread" [_thread_blocked, id=96771, stack(0x00007000079ac000,0x0000700007aac000)]
+  0x00007ff0b506b000 JavaThread "Java Sound Event Dispatcher" daemon [_thread_blocked, id=69411, stack(0x000070000583d000,0x000070000593d000)]
+
+Other Threads:
+  0x00007ff0b487b800 VMThread "VM Thread" [stack: 0x0000700005534000,0x0000700005634000] [id=19459]
+  0x00007ff0b281c800 WatcherThread [stack: 0x000070000615b000,0x000070000625b000] [id=39939]
+  0x00007ff0b2818800 GCTaskThread "GC Thread#0" [stack: 0x0000700005025000,0x0000700005125000] [id=11779]
+  0x00007ff0b49ca000 GCTaskThread "GC Thread#1" [stack: 0x00007000065ed000,0x00007000066ed000] [id=52239]
+  0x00007ff0b41a9800 GCTaskThread "GC Thread#2" [stack: 0x00007000068f6000,0x00007000069f6000] [id=75811]
+  0x00007ff0b41b1000 GCTaskThread "GC Thread#3" [stack: 0x00007000069f9000,0x0000700006af9000] [id=54275]
+  0x00007ff0b480e000 GCTaskThread "GC Thread#4" [stack: 0x0000700006afc000,0x0000700006bfc000] [id=75011]
+  0x00007ff0b3964000 GCTaskThread "GC Thread#5" [stack: 0x0000700006bff000,0x0000700006cff000] [id=55043]
+  0x00007ff0b5083000 GCTaskThread "GC Thread#6" [stack: 0x0000700006d02000,0x0000700006e02000] [id=55299]
+  0x00007ff0b6960000 GCTaskThread "GC Thread#7" [stack: 0x0000700006e05000,0x0000700006f05000] [id=74499]
+  0x00007ff0b402c800 ConcurrentGCThread "G1 Main Marker" [stack: 0x0000700005128000,0x0000700005228000] [id=21251]
+  0x00007ff0b402d000 ConcurrentGCThread "G1 Conc#0" [stack: 0x000070000522b000,0x000070000532b000] [id=20483]
+  0x00007ff0b4c66000 ConcurrentGCThread "G1 Conc#1" [stack: 0x0000700006361000,0x0000700006461000] [id=61967]
+  0x00007ff0b484e800 ConcurrentGCThread "G1 Refine#0" [stack: 0x000070000532e000,0x000070000542e000] [id=20227]
+  0x00007ff0b484f800 ConcurrentGCThread "G1 Young RemSet Sampling" [stack: 0x0000700005431000,0x0000700005531000] [id=19715]
+
+Threads with active compile tasks:
+
+VM state:not at safepoint (normal execution)
+
+VM Mutex/Monitor currently owned by a thread: None
+
+Heap address: 0x0000000780000000, size: 2048 MB, Compressed Oops mode: Zero based, Oop shift amount: 3
+Narrow klass base: 0x0000000800000000, Narrow klass shift: 0
+Compressed class space size: 1073741824 Address: 0x0000000800000000
+
+Heap:
